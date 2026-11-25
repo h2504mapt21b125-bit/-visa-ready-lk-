@@ -227,3 +227,25 @@ tr:hover td { background: #fff8fb; }
 @media(max-width:700px) {
   .sakura-scene { width: 165px; height: 255px; right: -22px; bottom: -14px; opacity: .48; }
 }
+
+/* ===== LOGO DISPLAY FIX ===== */
+.brand-mark {
+  width: 45px !important;
+  height: 45px !important;
+  min-width: 45px;
+  min-height: 45px;
+  padding: 3px;
+  overflow: hidden;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  background: #ffffff !important;
+  border-radius: 12px;
+}
+
+.brand-mark img {
+  display: block !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: contain;
+}
