@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VISA-READY LK | Document Verification</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">V</div>
+        <div><strong>VISA-READY <span>LK</span></strong><small>DOCUMENT PORTAL</small></div>
+      </div>
+      <div class="side-label">WORKSPACE</div>
+      <nav>
+        <button class="nav-item active" data-page="dashboard"><span>▦</span> Dashboard</button>
+        <button class="nav-item" data-page="students"><span>♙</span> Students</button>
+        <button class="nav-item" data-page="documents"><span>▤</span> Documents</button>
+        <button class="nav-item" data-page="verification"><span>✓</span> Smart Verification</button>
+        <button class="nav-item" data-page="reports"><span>▧</span> Readiness Reports</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="help-card"><div class="help-icon">?</div><strong>Need assistance?</strong><p>Review document requirements before final submission.</p></div>
+        <div class="profile-mini"><div class="avatar">AD</div><div><strong>Admin User</strong><small>Administrator</small></div><span class="online-dot"></span></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu" aria-label="Open menu">☰</button>
+        <div class="crumb">Workspace <span>/</span> <strong id="crumbPage">Dashboard</strong></div>
+        <div class="top-actions"><span class="demo-pill">DEMO MODE</span><button class="icon-btn" title="Notifications">♧</button><div class="avatar top-avatar">AD</div></div>
+      </header>
+
+      <section class="page active" id="page-dashboard">
+        <div class="page-heading"><div><p class="eyebrow">OVERVIEW</p><h1>Good morning, Admin <span>✦</span></h1><p class="muted">Here’s what’s happening with your student applications.</p></div><button class="primary-btn" data-go="students">＋ Add New Student</button></div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Prototype environment</strong><p>Use fictional student details only. This demo does not securely store or submit real visa documents.</p></div><button class="notice-close" id="closeNotice">×</button></div>
+        <div class="stats-grid">
+          <article class="stat-card"><div class="stat-top"><span>Total Students</span><span class="stat-icon blue">♙</span></div><strong id="statStudents">3</strong><small><b>Active records</b> in this demo</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Documents Uploaded</span><span class="stat-icon purple">▤</span></div><strong id="statDocs">8</strong><small>Across all student profiles</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Pending Review</span><span class="stat-icon amber">◷</span></div><strong id="statPending">2</strong><small>Need staff attention</small></article>
+          <article class="stat-card"><div class="stat-top"><span>Ready for Review</span><span class="stat-icon green">✓</span></div><strong id="statReady">1</strong><small>Checklist completed</small></article>
+        </div>
+        <div class="content-grid">
+          <article class="panel wide-panel"><div class="panel-head"><div><h2>Recent Student Applications</h2><p>Track document preparation progress</p></div><button class="text-btn" data-go="students">View all →</button></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>APPLICATION ID</th><th>DOCUMENTS</th><th>STATUS</th><th></th></tr></thead><tbody id="recentStudents"></tbody></table></div></article>
+          <article class="panel activity-panel"><div class="panel-head"><div><h2>Quick Actions</h2><p>Common admin tasks</p></div></div><button class="quick-action" data-go="students"><span class="qa-icon blue">＋</span><span><b>Register a student</b><small>Create a new student profile</small></span><i>→</i></button><button class="quick-action" data-go="documents"><span class="qa-icon purple">↑</span><span><b>Upload documents</b><small>Add files to a student record</small></span><i>→</i></button><button class="quick-action" data-go="verification"><span class="qa-icon green">✓</span><span><b>Run verification</b><small>Compare entered details</small></span><i>→</i></button><div class="tip-box"><strong>✦ Verification tip</strong><p>Always compare names and dates of birth carefully. A system alert is only a prompt for staff review.</p></div></article>
+        </div>
+      </section>
+
+      <section class="page" id="page-students">
+        <div class="page-heading"><div><p class="eyebrow">RECORD MANAGEMENT</p><h1>Students</h1><p class="muted">Manage student profiles and their application records.</p></div><button class="primary-btn" id="openStudentModal">＋ Add New Student</button></div>
+        <div class="panel"><div class="panel-head toolbar"><div><h2>All Students</h2><p id="studentCountLabel">3 student records</p></div><input class="search" id="studentSearch" placeholder="⌕  Search by name or ID..."></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>APPLICATION ID</th><th>DATE OF BIRTH</th><th>DOCUMENTS</th><th>STATUS</th><th>ACTION</th></tr></thead><tbody id="studentsTable"></tbody></table></div></div>
+      </section>
+
+      <section class="page" id="page-documents">
+        <div class="page-heading"><div><p class="eyebrow">FILE MANAGEMENT</p><h1>Document Centre</h1><p class="muted">Upload and track the documents required for each student.</p></div></div>
+        <div class="notice"><span class="notice-icon">!</span><div><strong>Demo file handling</strong><p>Files are selected locally in your browser and are not uploaded to a secure server. Do not select real passports, NICs or certificates.</p></div></div>
+        <div class="panel"><div class="panel-head toolbar"><div><h2>Student document checklist</h2><p>Select a student to view required documents.</p></div><select id="documentStudentSelect" class="select"></select></div><div id="documentChecklist" class="checklist"></div></div>
+      </section>
+
+      <section class="page" id="page-verification">
+        <div class="page-heading"><div><p class="eyebrow">INTELLIGENT REVIEW</p><h1>Smart Verification</h1><p class="muted">Compare details entered from student documents and flag possible differences.</p></div></div>
+        <div class="notice"><span class="notice-icon">i</span><div><strong>Staff review required</strong><p>This prototype compares manually entered sample details. It does not read or authenticate document images.</p></div></div>
+        <div class="panel verify-panel"><div class="panel-head"><div><h2>Cross-document comparison</h2><p>Choose a student and enter details as shown on each document.</p></div></div><div class="form-grid"><label>Student<select id="verifyStudent" class="select"></select></label><label>Field to compare<select id="verifyField" class="select"><option value="name">Full name</option><option value="dob">Date of birth</option><option value="passport">Passport number</option></select></label></div><div class="compare-grid"><div class="compare-card"><span class="doc-tag">PASSPORT</span><label>Value shown on passport<input id="passportValue" placeholder="Enter passport value"></label></div><div class="compare-card"><span class="doc-tag">OTHER DOCUMENT</span><label>Value shown on other document<input id="otherValue" placeholder="Enter other document value"></label></div></div><button class="primary-btn" id="compareBtn">✓ Compare details</button><div id="verifyResult" class="verify-result hidden"></div></div>
+      </section>
+
+      <section class="page" id="page-reports">
+        <div class="page-heading"><div><p class="eyebrow">APPLICATION OVERVIEW</p><h1>Readiness Reports</h1><p class="muted">Review document completion and possible issues before staff approval.</p></div><button class="secondary-btn" id="printReport">Print report</button></div>
+        <div class="panel"><div class="panel-head"><div><h2>Application readiness</h2><p>Based on the demo checklist and manually recorded verification alerts.</p></div></div><div class="table-wrap"><table><thead><tr><th>STUDENT</th><th>COMPLETION</th><th>MISSING</th><th>STATUS</th><th></th></tr></thead><tbody id="reportsTable"></tbody></table></div></div>
+        <p class="footnote">“Ready for Final Review” means the demo checklist is complete. It is not a visa decision or confirmation that official requirements have been met.</p>
+      </section>
+      <footer>© 2026 VISA-READY LK <span>Student document preparation prototype · Not an official visa service</span></footer>
+    </main>
+  </div>
+
+  <div class="modal-backdrop hidden" id="studentModal"><div class="modal"><div class="modal-head"><div><p class="eyebrow">NEW RECORD</p><h2>Register Student</h2></div><button class="close-btn" id="closeStudentModal">×</button></div><form id="studentForm"><label>Full name<input required id="newName" placeholder="e.g. Nimal Perera"></label><div class="form-grid"><label>Date of birth<input required id="newDob" type="date"></label><label>Passport number<input required id="newPassport" placeholder="e.g. N1234567"></label></div><label>Contact number<input id="newPhone" placeholder="e.g. 07X XXX XXXX"></label><div class="modal-actions"><button type="button" class="secondary-btn" id="cancelStudent">Cancel</button><button class="primary-btn" type="submit">Create student</button></div></form></div></div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
