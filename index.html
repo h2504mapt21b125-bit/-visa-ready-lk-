@@ -10,6 +10,125 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <!-- Decorative cartoon Sakura tree and falling petals -->
+  <div class="sakura-scene" aria-hidden="true">
+    <svg class="sakura-tree" viewBox="0 0 390 510" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="sakuraTrunk" x1="0" y1="0" x2="1" y2="0">
+          <stop offset="0" stop-color="#75434b"/>
+          <stop offset=".42" stop-color="#bd796f"/>
+          <stop offset=".72" stop-color="#a85e60"/>
+          <stop offset="1" stop-color="#633b49"/>
+        </linearGradient>
+        <radialGradient id="sakuraBloom">
+          <stop offset="0" stop-color="#fffafd"/>
+          <stop offset=".55" stop-color="#ffd6e7"/>
+          <stop offset="1" stop-color="#ed8eb8"/>
+        </radialGradient>
+        <radialGradient id="sakuraBloomLight">
+          <stop offset="0" stop-color="#ffffff"/>
+          <stop offset=".7" stop-color="#ffe8f1"/>
+          <stop offset="1" stop-color="#f5a9c9"/>
+        </radialGradient>
+        <filter id="softBlossom" x="-30%" y="-30%" width="160%" height="160%">
+          <feGaussianBlur stdDeviation="1.8"/>
+        </filter>
+      </defs>
+
+      <!-- soft floating shadow -->
+      <ellipse cx="205" cy="481" rx="132" ry="17" fill="#d58eaa" opacity=".18"/>
+
+      <!-- curved trunk with branching limbs -->
+      <path d="M199 480 C190 420 210 370 190 321
+               C178 289 148 268 121 237
+               C96 209 91 178 104 145
+               M194 369 C222 330 258 312 274 273
+               C287 241 274 208 254 180
+               M187 325 C154 312 126 296 101 269
+               M207 407 C244 386 285 383 310 349
+               M184 287 C180 249 190 218 215 188
+               M120 237 C91 232 66 215 54 191
+               M271 275 C302 262 322 240 330 211"
+            fill="none" stroke="url(#sakuraTrunk)" stroke-width="22"
+            stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M195 474 C190 420 207 371 190 321
+               M193 360 C219 329 253 311 270 274
+               M184 286 C181 249 191 219 215 188"
+            fill="none" stroke="#e4a092" stroke-width="5"
+            stroke-linecap="round" opacity=".62"/>
+
+      <!-- blossom canopy: layered, rounded cartoon clusters -->
+      <g stroke="#e78caf" stroke-width="2.2">
+        <g fill="url(#sakuraBloom)">
+          <circle cx="77" cy="157" r="48"/>
+          <circle cx="119" cy="112" r="55"/>
+          <circle cx="176" cy="91" r="58"/>
+          <circle cx="235" cy="104" r="57"/>
+          <circle cx="291" cy="144" r="53"/>
+          <circle cx="323" cy="197" r="43"/>
+          <circle cx="267" cy="211" r="58"/>
+          <circle cx="205" cy="203" r="64"/>
+          <circle cx="139" cy="204" r="58"/>
+          <circle cx="79" cy="221" r="42"/>
+          <circle cx="115" cy="268" r="34"/>
+          <circle cx="299" cy="269" r="34"/>
+        </g>
+        <g fill="url(#sakuraBloomLight)" stroke="#f0a4c4" stroke-width="1.7">
+          <circle cx="47" cy="190" r="26"/>
+          <circle cx="145" cy="65" r="28"/>
+          <circle cx="211" cy="53" r="27"/>
+          <circle cx="277" cy="91" r="27"/>
+          <circle cx="347" cy="169" r="24"/>
+          <circle cx="246" cy="248" r="27"/>
+          <circle cx="166" cy="253" r="25"/>
+          <circle cx="66" cy="264" r="22"/>
+        </g>
+      </g>
+
+      <!-- individual five-petal flowers -->
+      <g>
+        <g transform="translate(111 129)">
+          <g fill="#fff8fc" stroke="#f0a1c1" stroke-width="1.2">
+            <ellipse cy="-9" rx="6" ry="9"/><ellipse cx="9" cy="-3" rx="6" ry="9" transform="rotate(72 9 -3)"/>
+            <ellipse cx="6" cy="8" rx="6" ry="9" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="6" ry="9" transform="rotate(216 -6 8)"/>
+            <ellipse cx="-9" cy="-3" rx="6" ry="9" transform="rotate(288 -9 -3)"/>
+          </g><circle r="3.5" fill="#f4bd55"/>
+        </g>
+        <g transform="translate(220 119) scale(1.15)">
+          <g fill="#fff9fc" stroke="#ee9abc" stroke-width="1.2">
+            <ellipse cy="-9" rx="6" ry="9"/><ellipse cx="9" cy="-3" rx="6" ry="9" transform="rotate(72 9 -3)"/>
+            <ellipse cx="6" cy="8" rx="6" ry="9" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="6" ry="9" transform="rotate(216 -6 8)"/>
+            <ellipse cx="-9" cy="-3" rx="6" ry="9" transform="rotate(288 -9 -3)"/>
+          </g><circle r="3.5" fill="#f4bd55"/>
+        </g>
+        <g transform="translate(292 178)">
+          <g fill="#fff9fc" stroke="#ee9abc" stroke-width="1.2">
+            <ellipse cy="-9" rx="6" ry="9"/><ellipse cx="9" cy="-3" rx="6" ry="9" transform="rotate(72 9 -3)"/>
+            <ellipse cx="6" cy="8" rx="6" ry="9" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="6" ry="9" transform="rotate(216 -6 8)"/>
+            <ellipse cx="-9" cy="-3" rx="6" ry="9" transform="rotate(288 -9 -3)"/>
+          </g><circle r="3.5" fill="#f4bd55"/>
+        </g>
+        <g transform="translate(157 213) scale(.9)">
+          <g fill="#fff9fc" stroke="#ee9abc" stroke-width="1.2">
+            <ellipse cy="-9" rx="6" ry="9"/><ellipse cx="9" cy="-3" rx="6" ry="9" transform="rotate(72 9 -3)"/>
+            <ellipse cx="6" cy="8" rx="6" ry="9" transform="rotate(144 6 8)"/><ellipse cx="-6" cy="8" rx="6" ry="9" transform="rotate(216 -6 8)"/>
+            <ellipse cx="-9" cy="-3" rx="6" ry="9" transform="rotate(288 -9 -3)"/>
+          </g><circle r="3.5" fill="#f4bd55"/>
+        </g>
+      </g>
+
+      <!-- cute sparkle accents -->
+      <g fill="#fff" stroke="#f3a4c5" stroke-width="1">
+        <path d="M38 112l5-13 5 13 13 5-13 5-5 13-5-13-13-5z"/>
+        <path d="M326 95l4-10 4 10 10 4-10 4-4 10-4-10-10-4z"/>
+        <path d="M333 293l4-9 4 9 9 4-9 4-4 9-4-9-9-4z"/>
+      </g>
+      <g fill="#f4b84e">
+        <circle cx="111" cy="129" r="2.5"/><circle cx="220" cy="119" r="2.5"/>
+        <circle cx="292" cy="178" r="2.5"/><circle cx="157" cy="213" r="2.5"/>
+      </g>
+    </svg>
+  </div>
   <div class="app-shell">
     <aside class="sidebar" id="sidebar">
       <div class="brand">
@@ -80,6 +199,7 @@
 
   <div class="modal-backdrop hidden" id="studentModal"><div class="modal"><div class="modal-head"><div><p class="eyebrow">NEW RECORD</p><h2>Register Student</h2></div><button class="close-btn" id="closeStudentModal">×</button></div><form id="studentForm"><label>Full name<input required id="newName" placeholder="e.g. Nimal Perera"></label><div class="form-grid"><label>Date of birth<input required id="newDob" type="date"></label><label>Passport number<input required id="newPassport" placeholder="e.g. N1234567"></label></div><label>Contact number<input id="newPhone" placeholder="e.g. 07X XXX XXXX"></label><div class="modal-actions"><button type="button" class="secondary-btn" id="cancelStudent">Cancel</button><button class="primary-btn" type="submit">Create student</button></div></form></div></div>
   <div class="toast" id="toast"></div>
+  <div class="petal-layer" id="petalLayer" aria-hidden="true"></div>
   <script src="app.js"></script>
 </body>
 </html>
